@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    /*element yang ini dibuat untuk header pada atas document*/
     <nav class="navbar navbar-expand-lg navbar-light p-3 bg-primary">
         <a href="" class="navbar-brand text-white ">Student Management Mini App</a>
         <div class="collapse navbar-collapse">
@@ -31,6 +32,8 @@
             </ul>
         </div>
     </nav>
+    
+    /*tulisan heading pada paling atas sebelum form*/
     <div class="container-fluid mt-5">
         <h1>
         Student Information
@@ -39,6 +42,8 @@
             Tampilkan form
         </button>
     </div>
+    
+    /*division untuk form element dan semua komponen didalamnya seperti input text,radio button, select option input dan button untuk mengsubmit form*/
     <div class="container-fluid row mt-5 ml-1">
        <form class="col-sm-8 formulir">
             <div class="form-row">
@@ -121,6 +126,9 @@
             </div>
             <button class="btn btn-primary btn-lg">Add Student</button>
        </form>
+        
+        /*filter form yang berisi informasi element tentang fakultas 
+        dan program study mahasiswa yang di isi kedalam select-option input*/
        <div class="col-sm-4">
         <div class="form-row">
             <div class="value">
@@ -169,8 +177,10 @@
             <button class="mt-2 btn btn-primary btn-lg" onclick="filterprodi();">filter prodi</button>
         </div>
        </div>
-
     </div>
+    
+    /*section table, tempat menyimpan data yang akan di input oleh user, terdiri dari thead yang adalah header text untuk setiap table data, 
+    dan ada tbody yg berisi table row dan table data yang berdasarkan dari form input*/
     <div class="container-fluid container-fluid2">
         <h1 class="h1">Our Student</h1>
         <input type="text" name="search" onkeyup="carinama();" id="kotak-pencarian" class="form-control mb-3" placeholder="cari berdasarkan nama">
@@ -188,6 +198,9 @@
             </tbody>
         </table>
     </div>
+    
+    /*footer element adalah elemen yang menjelaskan secara singkat tentang condiment apa saja yang dipakai didalam html ini atau website ini.
+    seperti bahasa,atau contant, atau pembuat website dan informasinya*/
     <footer class="navbar navbar-expand-lg navbar-light p-3 bg-secondary flex">
       <p class="made">made with : <span>JS</span> <span>Bootstrap</span> <span>HTML</span>
     </p>
