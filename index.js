@@ -1,3 +1,4 @@
+//deklarasi varible untuk setiap fungsi yang akan digunakan
 const cari = document.querySelector('#kotak-pencarian');
 const fakultas = document.querySelector('#fakultas');
 const prodi = document.querySelector('#prodi');
@@ -5,15 +6,34 @@ const tableSiswa = document.querySelector('.table');
 const id = document.getElementById('id');
 const name = document.getElementById('name');
 var body = tableSiswa.querySelector('tbody');
-var filterfak = document.querySelector('#filterFakultas');
-var filterpro = document.querySelector('#filterProdi');
 const formulir = document.querySelector('.formulir');
+
+//mengisi gender kedalam array agar bisa di looping ketika diklik dan diambil nilainya
 let tipe = [document.querySelector('#male'),
             document.querySelector('#female')]
   var tampilkan = document.querySelector('.show-form');
+
+  //event untuk menambahkan student ketika di klik
   formulir.addEventListener('submit',tambah);
+
+  var options2 = prodi.querySelectorAll('option');
+
+  //filter pada menu form add fakultas, prodi berdasarkan fakultas yang di pilih
+  fakultas.addEventListener('change',function() {
+    prodi.textContent = '';
+    for(var i = 0; i < options2.length; i++) {
+      if(options2[i].dataset.option == this.value) {
+        prodi.appendChild(options2[i]);
+      }
+    }
+  })
+
+//fungsi untuk menambahkan new student kedalam table ketika di klik add button
 function tambah(events){
+    //menghalau form untuk tersubmit
     events.preventDefault();
+
+    //membuat element baru untuk table tbody
     const datas = {
         rows:document.createElement('tr'),
         td1:document.createElement('td'),
@@ -23,11 +43,15 @@ function tambah(events){
         td5:document.createElement('td'),
         tbtn:document.createElement('button')
       }
+
+      //membuat setiap array baru untuk gender yanng di klik pada form
       const gender = tipe.map(function(kelamin){
         if (kelamin.checked) {
           return kelamin.value;
         }
       })
+
+      //menambahkan data kedalam row pada tbody di table students
       datas.td1.innerText = id.value;
       datas.td2.innerText = name.value;
       datas.td3.innerText = gender;
@@ -36,6 +60,7 @@ function tambah(events){
       datas.tbtn.classname = 'btn btn-danger';
       datas.tbtn.textContent = 'delete';
 
+      //menambahkan setiap row yang di add ke bagian tbody didalam table
       datas.rows.appendChild(datas.td1);
       datas.rows.appendChild(datas.td2);
       datas.rows.appendChild(datas.td3);
@@ -44,10 +69,17 @@ function tambah(events){
       datas.rows.appendChild(datas.tbtn);
 
       body.appendChild(datas.rows);
+      datas.tbtn.addEventListener('click',function(){
+        var row = this.parentNode;
+        row.parentNode.removeChild(row);
+      })
 }
 
+
+  //fungsi untuk menyembunyikan form ketika di klik show/hide button
+  //dengan cara mengubah display style pada form tersebut ketika di klik buttonnya
   formulir.style.display = 'none';
-  tampilkan.textContent = "show / hide"
+  tampilkan.textContent = "show / hide";
   function show(){
     if (formulir.style.display == 'none') {
       formulir.style.display = 'block'
@@ -55,6 +87,8 @@ function tambah(events){
       formulir.style.display = "none"
     }
   }
+
+  //fungsi untuk filter pencarian nama di search box menggunakan event handling onkeyup
   function carinama(){
     var nilainama = cari.value.toUpperCase();
     var pencarian = body.getElementsByTagName('tr');
@@ -67,6 +101,8 @@ function tambah(events){
       }
     }
   }
+
+  //fungsi untuk filter fakultas ketika di klik filter button pada pilihan select fakultas
   function filterfakultas(){
     var nilainama = filterfak.value.toUpperCase();
     var pencarian = body.getElementsByTagName('tr');
@@ -79,6 +115,8 @@ function tambah(events){
       }
     }
   }
+
+  //fungsi untuk filter prodi ketika di klik filter button pada pilihan select prodi
   function filterprodi(){
     var nilainama = filterpro.value.toUpperCase();
     var pencarian = body.getElementsByTagName('tr');
