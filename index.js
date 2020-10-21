@@ -7,6 +7,8 @@ const id = document.getElementById('id');
 const name = document.getElementById('name');
 var body = tableSiswa.querySelector('tbody');
 const formulir = document.querySelector('.formulir');
+const filterfak = document.querySelector('#filterFakultas');
+const filterpro = document.querySelector('#filterProdi');
 
 //mengisi gender kedalam array agar bisa di looping ketika diklik dan diambil nilainya
 let tipe = [document.querySelector('#male'),
@@ -30,7 +32,6 @@ let tipe = [document.querySelector('#male'),
 
 //fungsi untuk menambahkan new student kedalam table ketika di klik add button
 function tambah(events){
-
     //menghalau form untuk tersubmit
     events.preventDefault();
 
@@ -45,7 +46,7 @@ function tambah(events){
         tbtn:document.createElement('button')
       }
 
-      //membuat setiap array baru untuk gender yang di klik pada form
+      //membuat setiap array baru untuk gender yanng di klik pada form
       const gender = tipe.map(function(kelamin){
         if (kelamin.checked) {
           return kelamin.value;
