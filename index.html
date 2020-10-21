@@ -35,15 +35,15 @@
         <h1>
         Student Information
         </h1>
-        <button class="btn btn-primary btn-sm">
+        <button class="btn btn-primary btn-sm show-form" onclick = "show();">
             Tampilkan form
         </button>
     </div>
     <div class="container-fluid row mt-5 ml-1">
-       <form class="col-sm-6">
+       <form class="col-sm-6 formulir">
             <div class="form-row">
                 <div class="name">
-                    id
+                    ID
                 </div>
                 <div class="value">
                     <div class="input-group">
@@ -53,7 +53,7 @@
             </div>
             <div class="form-row">
                 <div class="name">
-                    name
+                    Nama
                 </div>
                 <div class="value">
                     <div class="input-group">
@@ -61,14 +61,22 @@
                     </div>
                 </div>
             </div>
+            <div class="form-check">
+                <input class="form-check-input" name="gender" type="radio"  id="male" value="male">
+                <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="gender" type="radio"  id="female" value="male">
+                <label class="form-check-label">Female</label>
+            </div>
             <div class="form-row">
                 <div class="name">
-                    fakultas
+                    Fakultas
                 </div>
                 <div class="value">
                     <div class="input-group">
                         <div class="rs-select2 select--no-search">
-                            <select name="subject" id="" class="subject custom-select">
+                            <select name="subject" id="fakultas" class="subject custom-select">
                                 <option value="">Pascasarjana</option>
                                 <option value="">Fakultas Filsafat</option>
                                 <option value="">Fakultas Keguruan dan Ilmu Pendidikan</option>
@@ -84,26 +92,26 @@
             </div>
             <div class="form-row">
                 <div class="name">
-                    prodi
+                    Program Studi
                 </div>
                 <div class="value">
                     <div class="input-group">
                         <div class="rs-select2 select--no-search">
-                            <select name="subject" id="" class="subject custom-select">
-                                <option value="">Magister Management</option>
-                                <option value="">Magister Filsafat</option>
-                                <option value="">Filsafat Agama Kristen Advent</option>
-                                <option value="">Pendidikan Agama</option>
-                                <option value="">Pendidikan Bahasa Inggris</option>
-                                <option value="">Pendidikan Ekonomi</option>
-                                <option value="">Pendidikan Guru Luar Sekolah</option>
-                                <option value="">Manajemen</option>
-                                <option value="">Akuntansi</option>
-                                <option value="">Agronomi</option>
-                                <option value="">Informatika</option>
-                                <option value="">Sistem Informasi</option>
-                                <option value="">Ners</option>
-                                <option value="">Sekretaris</option>
+                            <select name="subject" id="prodi" class="subject custom-select">
+                                <option value="magistermanagement">Magister Management</option>
+                                <option value="magisterfilsafat">Magister Filsafat</option>
+                                <option value="filsafat">Filsafat Agama Kristen Advent</option>
+                                <option value="agama">Pendidikan Agama</option>
+                                <option value="bahasainggris">Pendidikan Bahasa Inggris</option>
+                                <option value="ekonomi">Pendidikan Ekonomi</option>
+                                <option value="guruluarsekolah">Pendidikan Guru Luar Sekolah</option>
+                                <option value="manajemen">Manajemen</option>
+                                <option value="akuntansi">Akuntansi</option>
+                                <option value="agronomi">Agronomi</option>
+                                <option value="informatika">Informatika</option>
+                                <option value="sisteminformasi">Sistem Informasi</option>
+                                <option value="ners">Ners</option>
+                                <option value="sekretaris">Sekretaris</option>
                             </select>
                         </div>
                     </div> 
@@ -113,13 +121,14 @@
        </form>
        <div class="col-sm-6">
         <div class="form-row">
-            <div class="name">
+            <!-- <div class="name">
                 fakultas
-            </div>
+            </div> -->
             <div class="value">
                 <div class="input-group">
                     <div class="rs-select2 select--no-search">
-                        <select name="subject" id="" class="subject custom-select">
+                        <label class = "name" for="filterFakultas">Fakultas</label><br>
+                        <select name="subject" id="filterFakultas" class="subject custom-select">
                                 <option value="">Pascasarjana</option>
                                 <option value="">Fakultas Filsafat</option>
                                 <option value="">Fakultas Keguruan dan Ilmu Pendidikan</option>
@@ -135,13 +144,14 @@
         </div>
         <button class="btn btn-primary btn-lg">filter faculty</button>
         <div class="form-row">
-            <div class="name">
+            <!-- <div class="name">
                 prodi
-            </div>
+            </div> -->
             <div class="value">
                 <div class="input-group">
                     <div class="rs-select2 select--no-search">
-                        <select name="subject" id="" class="subject custom-select">
+                        <label class = "name" for="filterProdi">Program Studi</label><br>
+                        <select name="subject" id="filterProdi" class="subject custom-select">
                                 <option value="">Magister Management</option>
                                 <option value="">Magister Filsafat</option>
                                 <option value="">Filsafat Agama Kristen Advent</option>
@@ -167,16 +177,18 @@
     </div>
     <div class="container-fluid container-fluid2">
         <h1 class="h1">Our Student</h1>
+        <input type="text" name="search" id="searchbox">
         <table class="table container">
             <thead>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Faculty</th>
-                <th>Prodi</th>
-                <th>Action</th>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>Fakultas</th>
+                <th>Program Studi</th>
+                <th></th>
             </thead>
         </table>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
