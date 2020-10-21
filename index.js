@@ -57,7 +57,7 @@ function tambah(events){
       datas.td3.innerText = gender;
       datas.td4.innerText = fakultas.value;
       datas.td5.innerText = prodi.value;
-      datas.tbtn.classname = 'btn btn-danger';
+      datas.tbtn.classname = 'btn btn-danger ml-2';
       datas.tbtn.textContent = 'delete';
 
       //menambahkan setiap row yang di add ke bagian tbody didalam table
