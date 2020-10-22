@@ -32,6 +32,7 @@ let tipe = [document.querySelector('#male'),
 
 //fungsi untuk menambahkan new student kedalam table ketika di klik add button
 function tambah(events){
+
     //menghalau form untuk tersubmit
     events.preventDefault();
 
@@ -46,7 +47,7 @@ function tambah(events){
         tbtn:document.createElement('button')
       }
 
-      //membuat setiap array baru untuk gender yanng di klik pada form
+      //membuat setiap array baru untuk gender yang di klik pada form
       const gender = tipe.map(function(kelamin){
         if (kelamin.checked) {
           return kelamin.value;
@@ -59,8 +60,8 @@ function tambah(events){
       datas.td3.innerText = gender;
       datas.td4.innerText = fakultas.value;
       datas.td5.innerText = prodi.value;
-      datas.tbtn.classname = 'btn btn-danger ml-2';
-      datas.tbtn.textContent = 'delete';
+      datas.tbtn.classname = 'btn btn-danger ml-3';
+      datas.tbtn.textContent = 'hapus';
 
       //menambahkan setiap row yang di add ke bagian tbody didalam table
       datas.rows.appendChild(datas.td1);
@@ -79,14 +80,15 @@ function tambah(events){
 
 
   //fungsi untuk menyembunyikan form ketika di klik show/hide button
-  //dengan cara mengubah display style pada form tersebut ketika di klik buttonnya
+  //dengan cara mengubah display pada form tersebut ketika di klik buttonnya
   formulir.style.display = 'none';
-  tampilkan.textContent = "show / hide";
   function show(){
     if (formulir.style.display == 'none') {
       formulir.style.display = 'block'
+      tampilkan.textContent = "Hide Form Add New Student";
     } else{
       formulir.style.display = "none"
+      tampilkan.textContent = "Show Form Add New Student";
     }
   }
 
