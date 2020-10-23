@@ -10,12 +10,12 @@
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="css/main.css" rel="stylesheet" media="all">
 </head>
 <body>
-    <!-- /*element yang ini dibuat untuk header pada atas document*/ -->
+    <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-light p-3 bg-warning ">
         <a href="" class="navbar-brand text-dark"><b>Unklab Student Information Mini App</b></a>
         <div class="collapse navbar-collapse">
@@ -35,7 +35,7 @@
     </nav>
     
 
-    <!-- tulisan paling atas(heading) sebelum form -->
+    <!-- tulisan paling atas sebelum form -->
     <div class="container-fluid mt-5">
         <h1>
         Unklab Student Information Mini App
@@ -48,7 +48,7 @@
     </div>
     
    
-    <!-- division untuk form element dan semua komponen didalamnya seperti input text, radio button, select option input dan button untuk mengsubmit form -->
+    <!-- div untuk form element dan semua komponen didalamnya seperti input text, radio button, select option input dan button untuk mengsubmit form -->
     <div class="container-fluid row mt-4 ml-1">
         <form class="col-sm-8 formulir">
              <div class="form-row">
@@ -81,7 +81,7 @@
 
             <div class="input-group">
                 <div class="form-check">
-                    <input class="form-check-input" name="gender" type="radio"  id="male" value="Laki-laki">
+                    <input class="form-check-input" name="gender" type="radio"  id="male" value="Laki-laki" checked>
                     <label class="form-check-label">Laki-laki</label>
                 </div>
                 <div class="form-check">
@@ -89,8 +89,8 @@
                 <label class="form-check-label">Perempuan</label>
                 </div>
             </div>
+            <br><br>
 
-            <br>
             <div class="form-row">
                 <div class="name">
                     Fakultas
@@ -98,7 +98,7 @@
                 <div class="value">
                     <div class="input-group">
                         <div class="rs-select2 select--no-search">
-                            <select name="subject" id="fakultas" class="subject custom-select" >
+                            <select name="subject" id="fakultas" class="subject custom-select">
                                 <option value="Pascasarjana">Pascasarjana</option>
                                 <option value="Filsafat">Fakultas Filsafat</option>
                                 <option value="FKIP">Fakultas Keguruan dan Ilmu Pendidikan</option>
@@ -144,8 +144,7 @@
             <button class="btn btn-success btn-lg">Tambah Mahasiswa</button>
        </form>
         
-      <!-- filter form yang berisi informasi element tentang fakultas 
-        dan program study mahasiswa yang di isi kedalam select-option input -->
+      <!-- filter form yang berisi informasi element tentang fakultas dan program study mahasiswa -->
        <div class="col-sm-4">
         <div class="form-row">
             <div class="value">
@@ -212,7 +211,7 @@
                 <th>Hapus Mahasiswa</th>
             </thead>
             <tbody>
-
+                
             </tbody>
         </table>
     </div>
